@@ -1,10 +1,13 @@
 <template>
 	<div>
 		<input type="text" v-model="inData">
+		<button @click="moreTasks(inData)">Archive</button>
 	</div>
 </template>
 
 <script>
+	import {mapMutations} from 'vuex';
+
 	export default {
 		name: "InputData",
 		
@@ -12,6 +15,10 @@
 			return{
 				inData: ""
 			}
+		},
+
+		methods:{
+			...mapMutations(['moreTasks'])
 		}
 	}
 </script>

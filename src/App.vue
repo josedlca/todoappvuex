@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-	  <InputData />
+	  <InputData inputData />
+	  <ShowInpData :passmsg="msg" />
   </div>
 </template>
 
 <script>
 	import InputData from './components/InputData'
+	import ShowInpData from './components/ShowInpData'
 
 	export default {
 		name: 'app',
-
+		data(){
+			return{
+				msg: "creo"
+			}
+		},
 		components: {
-			InputData		
+			InputData,
+			ShowInpData	
 		}
 	}
 </script>
