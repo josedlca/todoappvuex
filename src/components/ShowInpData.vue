@@ -1,21 +1,29 @@
 <template>
 	<div>
-		
-		<p>{{passmsg}} - {{showStore}}</p>
+		<ul>
+			<li v-for="(item, index) of showStore" :key="item.id">
+				{{item.task}} - {{index}}
+				<input type="checkbox" v-model="item.taskState">
+				<button @click="deleteTask(index)">+</button>
+			</li>
+		</ul>
 	</div>
 </template>
 
 <script>
+	import {mapMutations} from 'vuex';
+
 	export default {
-		props:[
-			'passmsg'
-		],
 		name:"ShowInpData",
 
 		data(){
 			return{
 				showStore: this.$store.state.tasksList
 			}
+		},
+
+		methods:{
+			...mapMutations(['deleteTask'])
 		}
 		
 	}
