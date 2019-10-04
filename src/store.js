@@ -6,9 +6,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
 	tasksList:[
-		{task: "cocinar" , taskState: false},
-		{task: "limpiar" , taskState: false},
-		{task: "trabajar" , taskState: false}
 	]
   },
   mutations: {
@@ -17,6 +14,14 @@ export default new Vuex.Store({
 	},
 	deleteTask(state, index){
 		state.tasksList.splice(index, 1)
+	},
+	groupalDelete(state){
+		state.tasksList.forEach((taskItem, key) =>{
+			if(taskItem.taskState != false ){
+				state.tasksList.splice(key, 1)
+				console.log(taskItem)
+			}
+		})
 	}
   },
   actions: {
