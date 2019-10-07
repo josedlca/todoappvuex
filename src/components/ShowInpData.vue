@@ -1,14 +1,12 @@
 <template>
-	<div>
-		<ul>
-			<li v-for="(item, index) of showStore" :key="item.id">
-				{{item.task}} - {{index}}
-				<input type="checkbox" v-model="item.taskState">
-				<button @click="deleteTask(index)">X</button>
-				<span>{{item.taskState}}</span>
-			</li>
-			<button @click="groupalDelete">delete</button>
-		</ul>
+	<div class="w-8/12 mx-auto">
+		<div class="py-2" v-for="(item, index) of showStore" :key="item.id">
+			<span class="text-red-600">{{index}}</span> 
+			<p class="inline">{{item.task}}</p>  
+			<input type="checkbox" v-model="item.taskState">
+			<button @click="deleteTask(index)">X</button>
+		</div>
+		<button @click="groupalDelete">delete</button>
 	</div>
 </template>
 

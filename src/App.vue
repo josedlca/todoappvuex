@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container mx-auto bg-blue-200">
+  <div id="app" class="container mx-auto w-10/12 py-4">
 	  <InputData inputData />
 	  <ShowInpData :passmsg="msg" />
   </div>
