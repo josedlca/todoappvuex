@@ -1,7 +1,9 @@
 <template>
-	<div>
-		<input type="text" v-model="inData">
-		<button @click="moreTasks(inData)">Archive</button>
+	<div class="flex">
+		<div class="mx-auto">
+			<input class="border-red-400 border-2" type="text" v-model="inData">
+			<button @click="moreTasks(inData)">Archive</button>
+		</div>
 	</div>
 </template>
 
